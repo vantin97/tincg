@@ -1,0 +1,80 @@
+﻿@model CSmodul2.ViewModels.HomeCreateViewModels
+@{
+    ViewBag.Title = "Create Product";
+}
+<div class="card my-lg-5">
+    <div class="card-header bg-info">
+        <h1>Tạo bài viết mới</h1>
+    </div>
+    <div class="card-body">
+        <form enctype="multipart/form-data" asp-controller="Home" asp-action="Create" method="post" class="mb-auto">
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="NameProduct"></label>
+                </div>
+                <div class="col-sm-10">
+                    <input asp-for="NameProduct" class="form-control" />
+                    <span asp-validation-for="NameProduct" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="ShortDescription"></label>
+                </div>
+                <div class="col-sm-10">
+                    <input asp-for="ShortDescription" class="form-control" />
+                    @*<textarea asp-for="ShortDescription" class="form-control"> </textarea>*@
+                    <span asp-validation-for="ShortDescription" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="Author"></label>
+                </div>
+                <div class="col-sm-10">
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="ProTpye"></label>
+                </div>
+                <div class="col-sm-10">
+                    <input asp-for="ProTpye"  class="form-control" />
+                    <select asp-for="ProTpye" class="custom-select" 
+                            @*asp-items="@GetEnum"*@>
+
+                    </select>
+                    <span asp-validation-for="ProTpye" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="Content"></label>
+                </div>
+                <div class="col-sm-10">
+                    @*<input asp-for="Content" class="form-control" />*@
+                    <textarea asp-for="Content" class="form-control"> </textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+            </div>
+            @*<div asp-validation-summary="All"></div>*@
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $(".custom-file-input").on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+        });
+    </script>
+}*@
