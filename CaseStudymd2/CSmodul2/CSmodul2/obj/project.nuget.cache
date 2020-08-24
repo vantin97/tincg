@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rB4d0bI5nf2o838bmYp0dX6g+bMgIMblNTfwEqun+OYBxQMM9j5ne5yqjEyB8iPv227OYvhXYunHyKta3LdzHw==",
+  "dgSpecHash": "rcUkosUz9nGWJnkoou/O8ubZQDYCLLcOhDiQM5c+/C/qHo21Gg1aUiWvrLCupJjWS84TpZ4q6d/mIusGiCD9OA==",
   "success": true,
-  "projectFilePath": "D:\\git\\Gitproject\\GitProject\\C#\\CaseStudymd2\\CSmodul2\\CSmodul2\\CSmodul2.csproj",
+  "projectFilePath": "D:\\tincggithub\\tincg\\CaseStudymd2\\CSmodul2\\CSmodul2\\CSmodul2.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

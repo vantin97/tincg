@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Login Page";
+}
+
+@model LoginViewModels
+@{
+    ViewBag.Title = "Register user";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card my-lg-5">
+    <div class="card-header bg-info">
+        <h1>Login</h1>
+    </div>
+    <div class="card-body">
+        <form asp-controller="Account" asp-action="Login" method="post" class="mb-auto">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input hidden asp-for="ReturnUrl" value="@ViewBag.ReturnUrl" />
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="Email"></label>
+                </div>
+                <div class="col-sm-10">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="Password"></label>
+                </div>
+                <div class="col-sm-10">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <label asp-for="Rememberme">&nbsp;</label>
+                </div>
+                <div class="col-sm-10">
+                    <label class="form-check-label">
+                        <input type="checkbox" asp-action="Rememberme"> Remember me
+                    </label>                    
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

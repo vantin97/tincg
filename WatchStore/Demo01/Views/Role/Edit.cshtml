@@ -1,0 +1,51 @@
+﻿@model EditRoleViewModels
+@{
+    ViewBag.Title = "Edit Role";
+}
+
+<h3>Role Managerment &gt; @ViewBag.Title</h3>
+
+<form asp-controller="Role" asp-action="Edit" method="post" class="mb-2">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input hidden asp-for="RoleId" />
+    <div class="row form-group">
+        <div class="col-sm-2">
+            <label asp-for="RoleName"></label>
+        </div>
+        <div class="col-sm-10">
+            <input asp-for="RoleName" class="form-control" />
+            <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Update</button>        
+        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#DeleteRoleModel">
+            Delete
+        </button>
+        <a asp-controller="Role" asp-action="Index" class="btn btn-warning">Back</a>
+    </div>
+</form>
+
+
+<!-- The Modal -->
+<div class="modal" id="DeleteRoleModel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Confirm delete role</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                Are you sure ???
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a asp-controller="Role" asp-action="Delete" asp-route-id="@Model.RoleId" class="btn btn-danger">Yes</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

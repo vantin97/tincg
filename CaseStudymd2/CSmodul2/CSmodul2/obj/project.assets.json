@@ -12119,11 +12119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\Gitproject\\GitProject\\C#\\CaseStudymd2\\CSmodul2\\CSmodul2\\CSmodul2.csproj",
+      "projectUniqueName": "D:\\tincggithub\\tincg\\CaseStudymd2\\CSmodul2\\CSmodul2\\CSmodul2.csproj",
       "projectName": "CSmodul2",
-      "projectPath": "D:\\git\\Gitproject\\GitProject\\C#\\CaseStudymd2\\CSmodul2\\CSmodul2\\CSmodul2.csproj",
+      "projectPath": "D:\\tincggithub\\tincg\\CaseStudymd2\\CSmodul2\\CSmodul2\\CSmodul2.csproj",
       "packagesPath": "C:\\Users\\Tom Cu\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\Gitproject\\GitProject\\C#\\CaseStudymd2\\CSmodul2\\CSmodul2\\obj\\",
+      "outputPath": "D:\\tincggithub\\tincg\\CaseStudymd2\\CSmodul2\\CSmodul2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

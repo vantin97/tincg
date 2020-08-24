@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewBag.Title = "Watch Store";
+    Layout = "~/Views/Shared/_LayoutDemo.cshtml";
+    
+}
+
+    <div class="row">
+        @foreach (var emp in Model)
+        {
+            var avatarPath = $"/images/{(emp.AvatarPath ?? "1.jpg")}";
+        <div class="col-sm-4">
+            <div class="card mt-2">
+                <div class="card-header text-center">
+                    <h4>@emp.FullName</h4>
+                </div>
+                @*<div class="card-body"><img src="@Url.Content("~/"+emp.AvatarPath)" class="card-img-bottom" /></div>*@
+                <div class="card-body"><img src="@avatarPath" class="card-img-top img" asp-append-version="true" /></div>
+                
+                <div class="card-footer  text-center">
+                    <h4 class="text-center">@emp.Price $</h4>
+                    
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@emp.Id" class="btn btn-primary">View</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@emp.Id" class="btn btn-warning">Edit</a>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@emp.Id" class="btn btn-danger">Delete</a>
+                </div>
+                                
+            </div>
+        </div>
+        }
+    </div>
+    

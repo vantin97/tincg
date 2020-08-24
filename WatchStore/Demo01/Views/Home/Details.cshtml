@@ -1,0 +1,29 @@
+﻿@model HomeDetailsViewModels
+@{    
+    ViewBag.Title = ViewBag.Title;
+    var avatarPath = $"/images/{(Model.Employee.AvatarPath ?? "1.jpg")}";
+}
+
+    <div class="row justify-content-center">
+        <div class="col col-sm-6">
+            <div class="card my-2">
+                <div class="card-header text-center">
+                    <h2>Name: @Model.Employee.FullName</h2>
+                </div>
+                <div class="card-body text-center">
+                    <img src="@avatarPath" class="card-img-top img" />
+                    <h3>Employee ID: @Model.Employee.Id</h3>
+                    <h3>Email: @Model.Employee.Email</h3>
+                    <h3>Department: @Model.Employee.Department</h3>
+
+                    <h3>Price: @Model.Employee.Price</h3>
+                    <h3>Description: @Model.Employee.Description</h3>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-info">Back</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Employee.Id" class="btn btn-warning">Edit</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.Employee.Id" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
