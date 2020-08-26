@@ -1,8 +1,407 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Tờ Khai Y Té";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="">
+    <div class="national-brand text-center mb-15">
+        <div class="text-uppercase"><h4><b>TỜ KHAI Y TẾ ĐỐI VỚI NGƯỜI NHẬP CẢNH</b></h4></div>
+    </div>
+    <div class="text-center text-uppercase">
+        <div class="">ĐÂY LÀ TÀI LIỆU, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN NHIỄM</div>
+        <div style="color: red;text-transform: none;">Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự</div>
+    </div>
+    <div class="row ">
+        <div class="   col-xs-12 ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Cửa khẩu  <em>(*)</em></label>
+                <select id="input19851" name="fields[gateId]" class="form-control inline-block form-inline">
+
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="   col-xs-12 ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Họ tên (ghi chữ IN HOA) <em>(*)</em></label>
+
+                <input class="form-control inline-block form-inline " name="fields[fullName]" type="text" value="" style="text-transform: uppercase;" data-msg-required="Bạn chưa nhập họ tên" onblur="this.value = this.value.toUpperCase(); this.value=removeSpaces(this.value);" />
+            </div>
+        </div>
+    </div>
+    <div class="row info-type-box">
+        <div class="col-md-4 col-sm-3  col-xs-12 ">
+            <div class="form-group inline-block form-inline ">
+                <label>Năm sinh  <em>(*)</em></label>
+
+                <select class="input-text form-control" name="fields[birthYear]">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-5  col-xs-12 ">
+
+            <div class="form-group inline-block form-inline  ">
+                <label>Giới tính  <em>(*)</em></label>
+                <select name="fields[gender]" class="form-control inline-block form-inline " data-msg-required="Bạn chưa chọn giới tính">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4  col-xs-12 ">
+            <div class="form-group inline-block form-inline">
+                <label>Quốc tịch  <em>(*)</em></label>
+                <select id="input19852" name="fields[nation]" class="form-control inline-block form-inline">
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="   col-xs-12 ">
+            <div class="form-group inline-block form-inline ">
+                <label>Số hộ chiếu hoặc giấy thông hành hợp pháp khác <em>(*)</em></label>
+                <input class="form-control inline-block form-inline " name="fields[passport]" type="text" value="" data-msg-required="Bạn chưa nhập CMT, hộ chiếu" onblur="this.value=removeSpaces(this.value);" />
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-xs-12 ">
+
+            <p>
+                <span>Thông tin đi lại <em style="color: red;">(*)</em></span>
+                <label>Tàu bay</label>
+                <input name="fields[airplane]" type="checkbox" class="style-checkbox" value="1" />
+                <label>Tàu thuyền</label>
+                <input name="fields[boat]" type="checkbox" class="style-checkbox" value="1" />
+                <label>Ô tô</label>
+                <input name="fields[car]" type="checkbox" class="style-checkbox" value="1" />
+                <label>Khác (Ghi rõ):</label>
+
+                <div style="clear:both">
+
+<textarea class="input19853 form-control inline-block form-inline mb-15" id="input19853" style="" name="fields[vehicleDetail]" class="form-control inline-block form-inline mb-15" onblur="var currentModule = VHV.App.modules[11], input=this, value = this.value;this.value=removeSpaces(this.value);"></textarea>
+
+                </div>
+            </p>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-6 col-sm-6  col-xs-6 ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Số hiệu phuong tiện </label>
+
+                <input class="form-control inline-block form-inline " name="fields[vehicleCode]" type="text" value="" data-msg-required="B?n chua nh?p s? hi?u phuong ti?n" onblur="this.value=removeSpaces(this.value);" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6  col-xs-6 ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Số ghế </label>
+
+                <input class="form-control inline-block form-inline " name="fields[seat]" type="text" value="" data-msg-required="B?n chua nh?p s? gh?" onblur="this.value=removeSpaces(this.value);" />
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-6 col-sm-6  col-xs-12 ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Ngày khởi hành  <em>(*)</em></label>
+
+                <div class="dateInputText inline-block form-inline label-width">
+                    <div class="day d-inline-b">
+                        <select class="input-text form-control" name="fields[startDay]" data-msg-required="B?n chua ch?n ngày kh?i hành">
+                            <option value="">Ngày</option>
+                        </select>
+                    </div>
+                    <div class="month d-inline-b">
+                        <select class="input-text form-control" name="fields[startMonth]" data-msg-required="B?n chua ch?n tháng kh?i hành">
+                            <option value="">Tháng</option>
+
+                        </select>
+                    </div>
+                    <div class="year d-inline-b">
+                        <select class="input-text form-control" name="fields[startYear]" data-msg-required="B?n chua ch?n nam kh?i hành">
+                            <option value="">Năm</option>
+                            <option selected value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6  col-xs-12 ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Ngày nhập cảnh  <em>(*)</em></label>
+                <div class="dateInputText inline-block form-inline label-width">
+                    <div class="day d-inline-b">
+                        <select class="input-text form-control" name="fields[entryDay]" data-msg-required="B?n chua ch?n ngày nh?p c?nh">
+                            <option value="">Ngày</option>
+                        </select>
+                    </div>
+                    <div class="month d-inline-b">
+                        <select class="input-text form-control" name="fields[entryMonth]" data-msg-required="B?n chua ch?n tháng nh?p c?nh">
+                            <option value="">Tháng</option>
+                        </select>
+                    </div>
+                    <div class="year d-inline-b">
+                        <select class="input-text form-control" name="fields[entryYear]" data-msg-required="B?n chua ch?n nam nh?p c?nh">
+                            <option value="">Năm</option>
+                            <option selected value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12"><label class="inline-block form-inline label-width">Địa điểm khởi hành (tỉnh/quốc gia)</label></div>
+        <div class="col-md-6 col-sm-6   ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Quốc gia/ Vùng lãnh thổ  <em>(*)</em></label>
+
+                <select id="" name="fields[countryStartPlace]" class="form-control inline-block form-inline">
+                    <option value="">-Chọn-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6   ">
+            <div class="form-group inline-block form-inline label-width ">
+                <label>Tỉnh  <em>(*)</em></label>
+                <div class="input-province inline-block form-inline province">
+                    <div data-x-display="['5b0ec228e138230cb0072f82','5d8c3cae76801b4a0103e55e','5d8c3cae76801b4a0103e592','5d66285476801b3f8d00fd64','5d8c3cae76801b4a0103e55f','5d66287a76801b3f846a3e03','5d8c3cae76801b4a0103e5d0'].indexOf($('#form11 select[name=&quot;fields[countryStartPlace]&quot;]').val()) !== -1">
+                    <div class="input-provinceId">
+
+                        <select id="" name="fields[startProvinceId]" class="form-control" data-x-cascade="fields[countryStartPlace]:parentId">
+                            <option value="">-Chọn-</option>
+                        </select>
+                    </div>
+                </div>
+                <div data-x-display="['5b0ec228e138230cb0072f82','5d8c3cae76801b4a0103e55e','5d8c3cae76801b4a0103e592','5d66285476801b3f8d00fd64','5d8c3cae76801b4a0103e55f','5d66287a76801b3f846a3e03','5d8c3cae76801b4a0103e5d0'].indexOf($('#form11 select[name=&quot;fields[countryStartPlace]&quot;]').val()) == -1">
+                    <div class="input-provinceText">
+                        <input class="form-control inline-block form-inline " name="fields[startPlace]" type="text" value="" data-msg-required="B?n chua ch?n t?nh" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="row ">
+    <div class="col-md-12"><label class="inline-block form-inline label-width">Địa điểm nơi đến (tỉnh/quốc gia)</label></div>
+    <div class="col-md-6 col-sm-6   ">
+        <div class="form-group inline-block form-inline label-width ">
+            <label>Quốc gia/ Vùng lãnh thổ  <em>(*)</em></label>
+
+            <select id="input19856" name="fields[countryEndPlace]" class="form-control inline-block form-inline">
+                <option value="">-Chọn-</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6   ">
+        <div class="form-group inline-block form-inline label-width ">
+            <label>Tỉnh <em>(*)</em></label>
+            <div class="input-province inline-block form-inline province">
+                <div data-x-display="['5b0ec228e138230cb0072f82','5d8c3cae76801b4a0103e55e','5d8c3cae76801b4a0103e592','5d66285476801b3f8d00fd64','5d8c3cae76801b4a0103e55f','5d66287a76801b3f846a3e03','5d8c3cae76801b4a0103e5d0'].indexOf($('#form11 select[name=&quot;fields[countryEndPlace]&quot;]').val()) !== -1">
+                    <div class="input-provinceId">
+                        <select id="input19857" name="fields[endProvinceId]" class="form-control inline-block form-inline" data-x-cascade="fields[countryEndPlace]:parentId">
+
+                            <option value="">-Chọn-</option>
+                        </select>
+                    </div>
+                </div>
+                <div data-x-display="['5b0ec228e138230cb0072f82','5d8c3cae76801b4a0103e55e','5d8c3cae76801b4a0103e592','5d66285476801b3f8d00fd64','5d8c3cae76801b4a0103e55f','5d66287a76801b3f846a3e03','5d8c3cae76801b4a0103e5d0'].indexOf($('#form11 select[name=&quot;fields[countryEndPlace]&quot;]').val()) == -1">
+                    <div class="input-provinceText">
+                        <input class="form-control inline-block form-inline " name="fields[endPlace]" type="text" value="" data-msg-required="B?n chua ch?n t?nh" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-xs-12 ">
+        <div class="form-group  ">
+            <label>Trong vòng 21 ngày qua, Anh/Chị có đến quốc gia/vùng lãnh thổ nào? <em>(*)</em></label>
+            <div style="clear:both">
+<textarea class=" form-control form-inline" id="input19858" style="" name="fields[countryPassing] form-control form-inline" onblur="var currentModule = VHV.App.modules[11], input=this, value = this.value;this.value=removeSpaces(this.value);"></textarea>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mtb-10"><b>Ðịa chỉ liên lạc tại Việt Nam</b></div>
+<div class="row ">
+    <div class="col-md-4 col-sm-4  col-xs-12 ">
+        <div class="form-group  ">
+            <label>Tỉnh thành  <em>(*)</em></label>
+            <select id="" name="fields[provinceId]" class="form-control">
+                <option value="">-Chọn-</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4  col-xs-12 ">
+        <div class="form-group  ">
+            <label>Quận/huyện  <em>(*)</em></label>
+
+            <select id="" name="fields[districtId]" class="form-control" data-x-cascade="fields[provinceId]:provinceId">
+                <option value="">-Chọn-</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4  col-xs-12 ">
+        <div class="form-group  ">
+            <label>Phuờng/Xã <em>(*)</em></label>
+
+            <select id="" name="fields[wardId]" class="form-control" data-x-cascade="fields[districtId]:districtId">
+                <option value="">-Chọn-</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row ">
+    <div class="   col-xs-12 ">
+        <div class="form-group  ">
+            <label>Địa chỉ nơi ở tại Việt Nam <em>(*)</em></label>
+            <input class="form-control inline-block " width="100%" name="fields[address]" type="text" value="" data-msg-required="B?n chua nh?p d?a ch?" onblur="this.value=removeSpaces(this.value);" />
+        </div>
+    </div>
+</div>
+<p style="font-size: 12px;"><i>Số điện thoại bạn sẽ sử dụng tại Việt Nam (Là số Roaming hoặc số Việt Nam)</i></p>
+<div class="row ">
+    <div class="col-md-6 col-sm-6  col-xs-12 ">
+        <div class="form-group inline-block form-inline label-width ">
+            <label>Điện thoại  <em>(*)</em></label>
+            <input class="form-control inline-block form-inline " name="fields[phone]" type="text" onkeypress=" return keypress(event)" value="" data-msg-required="B?n chua nh?p di?n tho?i" />
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6  col-xs-12 ">
+        <div class="form-group inline-block form-inline label-width ">
+            <label>Email </label>
+            <input class="form-control inline-block form-inline " name="fields[email]" data-msg-email="Email không dúng d?nh d?ng" type="text" value="" onblur="this.value=removeSpaces(this.value);" />
+        </div>
+    </div>
+</div>
+<div class="mb-10"><b>Trong vòng 21 ngày (tính đến thời điểm làm thủ tục xuất cảnh, nhập cảnh, quá cảnh) Anh/Chị có thấy xuất hiện dấu hiệu nào sau đây không? <span class="text-required">(*)</span></b></div>
+<div class="tableChoiceData mb-20">
+    <div class="cols-left">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>Triệu chứng</th>
+                    <th width="70" class="text-center">Có</th>
+                    <th width="70" class="text-center">Không</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sốt <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasFever]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng"></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasFever]" value="2"></td>
+                </tr>
+                <tr>
+                    <td>Ho <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasCough]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng"></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasCough]" value="2"></td>
+                </tr>
+                <tr>
+                    <td>Khó thở <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasBreath]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng"></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasBreath]" value="2"></td>
+                </tr>
+                <tr>
+                    <td>Ðau họng <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasSoreThroat]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng" /></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasSoreThroat]" value="2" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @*/////////////////// s ///////*@
+    <div class="col-right">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>Triệu chứng</th>
+                    <th width="70" class="text-center">Có</th>
+                    <th width="70" class="text-center">Không</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nôn/buồn nôn <span class="text-required">(*)</span></td>
+                    <td width="70" class="text-center"><input type="Radio" class="style-radio" name="fields[hasNausea]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng"></td>
+                    <td width="70" class="text-center"><input type="Radio" class="style-radio" name="fields[hasNausea]" value="2"></td>
+                </tr>
+                <tr>
+                    <td>Tiêu chảy <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasDiarrhea]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng"></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasDiarrhea]" value="2"></td>
+                </tr>
+                <tr>
+                    <td>Xuất huyết ngoài da <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasHemorrhage]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng"></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasHemorrhage]" value="2"></td>
+                </tr>
+                <tr>
+                    <td>Nổi ban ngoài da <span class="text-required">(*)</span></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasRash]" value="1" data-msg-required="B?n chua ch?n tri?u ch?ng" /></td>
+                    <td class="text-center"><input type="Radio" class="style-radio" name="fields[hasRash]" value="2" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-md-12   col-xs-12 ">
+        <div class="form-group  ">
+            <label>Danh sách vắc-xin hoặc sinh phẩm đuợc sử dụng</label>
+            <div style="clear:both">
+<textarea class=" form-control" id="" style="" name="fields[vacxin] form-control" onblur="var currentModule = VHV.App.modules[11], input=this, value = this.value;this.value=removeSpaces(this.value);"></textarea>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-10"><b>Lịcch sử phơi nhiễm: Trong vòng 21 ngày qua, Anh/Chị có: <span class="text-required">(*)</span></b></div>
+<div class="row ">
+    <div class="col-xs-12 ">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th width="70" class="text-center">Có</th>
+                    <th width="70" class="text-center">Không</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Đến trang trại chăn nuôi / chợ buôn bán động vật sống / cơ sở giết mổ động vật / tiếp xúc động vật <span class="text-required">(*)</span></td>
+                    <td width="70" class="text-center">
+                        <input type="Radio" class="style-radio" name="fields[hasAnimal]" value="1" data-msg-required="B?n chua ch?n l?ch s? phoi nhi?m" />
+                    </td>
+                    <td width="70" class="text-center">
+                        <input type="Radio" class="style-radio" name="fields[hasAnimal]" value="2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tiếp xúc gần (<2m) với người mắc bệnh viêm đường hô hấp do nCoV <span class="text-required">(*)</span></td>
+                    <td class="text-center">
+                        <input type="Radio" class="style-radio" name="fields[hasPatient]" value="1" data-msg-required="B?n chua ch?n l?ch s? phoi nhi?m" />
+                    </td>
+                    <td class="text-center">
+                        <input type="Radio" class="style-radio" name="fields[hasPatient]" value="2" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="agreeWrapper">
+    <div class="label-agree text-center">Dữ liệu bạn cung cấp hoàn toàn bảo mật và chỉ phục vụ cho việc phòng chống dịch, thuộc quản lý của Ban chỉ đạo quốc gia về Phòng chống dịch Covid-19. Khi bạn nhấn nút "Gửi" là bạn đã hiểu và đồng ý.</div>
+</div>
+<div class="btn-submit-box text-center mt-3">
+    <button type="submit" class="btn btn-success">Gửi tờ khai</button>
+</div>
+
