@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="libs/node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="CaseStudy.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Boots Manager</h2>
+            <a href="javascript:void(0);" class="btn btn-success"
+                onclick="boots.openModal()">Create Boots</a>
+            <div class="row mt-4 table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                           <th>Id</th>
+                           <th>Name Shoe</th>
+                           <th>Avata</th> 
+                           <th>Price</th>                          
+                           <th>Action</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody id="tbBoots">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal" id="addEditBoots">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Boots</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>        
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="formAddEditBoots">
+                            <input hidden name="id" id="id" value="0">
+                            <div class="row form-group">
+                                <div class="col-3">
+                                    <label>Name Shoe</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="Form-control" type="text" name="NameShoe" id="NameShoe" data-rule-required=true>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-3">
+                                    <label>Avata</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-control" type="text" name="Avata" id="Avata" data-rule-required=true>                                    
+                                </div>                               
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-3">
+                                    <label>Price</label>
+                                </div>
+                                <div class="col-9">
+                                    <input class="form-control" type="text" name="Price" id="Price" data-rule-required=true>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-3">
+                                    <label>Material</label>
+                                </div>
+                                <div class="col-9">
+                                    <select class="form-control" name="Material" id="Material"></select>
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>        
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <a href="javascript:;" class="btn btn-success" onclick="boots.save()">Save</a>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+
+    <!-- <script src="libs/node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script src="script/Boots.js"></script>
+
+</html>
